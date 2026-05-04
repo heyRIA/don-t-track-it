@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* IronTrack Colors */
+  --color-lime: #c3f400;
+  --color-background: #121212;
+  --color-surface: #1e1e1e;
+  --color-surface-high: #2a2a2a;
+  --color-outline: rgba(255, 255, 255, 0.05);
+
+  /* Material/Bento spacing variables from provided HTML */
+  --spacing-container: 20px;
+  --spacing-section: 32px;
+  --spacing-stack: 16px;
+  --spacing-unit: 8px;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-zinc-300 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-white font-extrabold tracking-tight;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-surface-high rounded-xl border border-outline p-4 relative overflow-hidden;
+  }
+
+  .glow-accent {
+    @apply absolute top-0 left-0 w-1 h-full bg-lime shadow-[0_0_10px_rgba(195,244,0,0.4)];
+  }
+
+  .nav-btn {
+    @apply flex flex-col items-center justify-center transition-all active:scale-95 text-zinc-500 hover:text-white;
+  }
+
+  .nav-btn-active {
+    @apply text-lime drop-shadow-[0_0_8px_rgba(195,244,0,0.4)];
+  }
+
+  .btn-primary {
+    @apply w-full bg-lime text-black font-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-[0_0_15px_rgba(195,244,0,0.2)];
+  }
+}
